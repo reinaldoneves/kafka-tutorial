@@ -13,7 +13,7 @@ import java.util.Map;
 
 /***
  * Config class to the Kafka producer
- * A producer is generally used to send messages to a topic
+ * A producer is used to send messages to a topic
  * the producer is in general a microservice.
  * @author Reinaldo Neves
  */
