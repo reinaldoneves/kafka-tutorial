@@ -23,7 +23,9 @@ public class KafkaApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(KafkaTemplate<String, String> kafkaTemplate) {
 		return args -> {
-			kafkaTemplate.send("naldosTopic", "Hello Kafka - Fora Bolsonaro");
+			kafkaTemplate.send("naldosTopic", "Hello Kafka - Fora Bolsonaro - Miliciano lunático");
 		};
+//		TODO: run this cmd at kafka partition to consume this topic:
+//		$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 	}
 }
