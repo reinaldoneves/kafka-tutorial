@@ -23,7 +23,11 @@ public class KafkaApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(KafkaTemplate<String, String> kafkaTemplate) {
 		return args -> {
-			kafkaTemplate.send("naldosTopic", "Hello Kafka - Fora Bolsonaro - Miliciano lunático");
+
+			for (int i = 0; i < 10000; i++) {
+				kafkaTemplate.send("naldosTopic", "Hello Kafka - Bolsonaro, o genocida miliciano disse até hoje um total de " + i + " MERDAS." +
+						"\n" +"Seu recorde é de " + i + " MERDAS ABSURDAS.");
+			}
 		};
 //		TODO: run this cmd at kafka partition to consume this topic:
 //		$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
